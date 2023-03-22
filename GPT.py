@@ -21,7 +21,7 @@ def construct_index(directory_path):
 
     llm_predictor = LLMPredictor(llm=OpenAI(temperature=0.7, model_name=model, max_tokens=num_outputs))
 
-    documents = SimpleDirectoryReader().load_data()
+    documents = SimpleDirectoryReader(directory).load_data()
 
     index = GPTSimpleVectorIndex(documents, llm_predictor=llm_predictor, prompt_helper=prompt_helper)
 
