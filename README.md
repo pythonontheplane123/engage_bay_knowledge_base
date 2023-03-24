@@ -9,11 +9,16 @@ Download both files and unzip the knowledge base text files.
 Change these two variables in the code as per your requirements,Open ai api key and directory(directory for knowledge base files)
 
 
-1)Installing the necessary packages
+1)Installing the necessary packages. Run these commands on terminal to install the necessary packages.
+
+
+pip install gpt-index
+pip install fastapi
+pip install openai
 
 
 
-2)Copypasting this in the terminal 
+2) Copypasting this in the terminal 
 uvicorn API:app --port 8000 --reload
 
 3) It is creating embeddings so it will take some time to load initially.. About 30 seconds or so
