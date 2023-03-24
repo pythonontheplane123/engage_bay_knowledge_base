@@ -26,7 +26,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = ''
 directory = '/Users/macos/desktop/ze_knowledge_base 2'
 
 
