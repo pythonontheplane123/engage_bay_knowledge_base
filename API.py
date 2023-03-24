@@ -27,7 +27,7 @@ app.add_middleware(
 )
 
 os.environ["OPENAI_API_KEY"] = ''
-directory = '/Users/macos/desktop/ze_knowledge_base 2'
+directory = '/Users/macos/desktop/ze_knowledge_base'
 
 
 def construct_index(directory_path):
