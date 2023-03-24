@@ -27,6 +27,10 @@ uvicorn API:app --port 8000 --reload
 
 http://127.0.0.1:8000/predict?input_text=what is a smart list?
 
+5) Once you have retreived the index.json file once, it will appear in local directory, you dont have to do it again and you can delete this part of the code that hogs memory:
+
+index = construct_index("docs")
+
 
 
 
