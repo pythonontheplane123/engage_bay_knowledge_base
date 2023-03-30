@@ -74,7 +74,7 @@ def read_root():
 @app.get("/predict")
 def answergen(input_text):
     index = GPTSimpleVectorIndex.load_from_disk('index.json')
-    response = index.query("Answer my questions only based on the context but also reply back appropriately if I am trying to converse" + input_text, response_mode="compact")
+    response = index.query("Answer my questions based on the context but reply back appropriately if I am trying to converse with you " + input_text, response_mode="compact")
     return response.response
 
 
