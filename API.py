@@ -56,7 +56,6 @@ iface = gr.Interface(fn=chatbot,
                      inputs=gr.inputs.Textbox(lines=7, label="Enter your text"),
                      outputs="text",
                      title="Custom-trained AI Chatbot")
-
 index = construct_index("docs")
 iface.launch(share=True)
 """
@@ -64,6 +63,9 @@ iface.launch(share=True)
 
 index = construct_index("docs")
 
+load_from_disk = False
+
+index = GPTSimpleVectorIndex.load_from_disk('index.json')
 
 
 @app.get("/")
@@ -73,8 +75,8 @@ def read_root():
 
 @app.get("/predict")
 def answergen(input_text):
-    index = GPTSimpleVectorIndex.load_from_disk('index.json')
-    response = index.query("Answer my questions based on the context but reply back appropriately if I am trying to converse with you " + input_text, response_mode="compact")
+    global index
+    response = index.query("You are a professional tech support employee, Answer my questions based on only context, be conversational otherwise" + input_text, response_mode="compact")
     return response.response
 
 
